@@ -1,5 +1,5 @@
 # KHCC
-character creator for kingdom hearts stream 
+- character creator for kingdom hearts stream 
 
 
 # To do
