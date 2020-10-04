@@ -9,5 +9,5 @@
 - creator should be able to save as txt file and load from txt files
 
 # ideas 
-- main class to run functions not code everything into main.
+- main class to run functions not code everything into form.
 - use a windows form app to adjust stats and creation
