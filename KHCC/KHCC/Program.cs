@@ -18,9 +18,17 @@ namespace KHCC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            CharacterBuilder cc = new CharacterBuilder();
-            Application.Run(new StartUp());
-            Application.Run(new CharacterBuilder());
+            CharacterContainer cc = new CharacterContainer();;
+
+
+            var su = new StartUp();
+            su.cc = cc;
+            su.ShowDialog();
+
+
+            var cb = new CharacterBuilder();
+            cb.cc = cc;
+            cb.ShowDialog();
 
             //primary
             //    50 point to gain through leveling

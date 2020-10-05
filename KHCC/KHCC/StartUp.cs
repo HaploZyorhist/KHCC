@@ -25,8 +25,6 @@ namespace KHCC
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            bodyBase = 30;
-            CharacterBuilder cb = new CharacterBuilder();
             this.Close();
         }
     }
