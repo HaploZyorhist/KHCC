@@ -1,0 +1,11 @@
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.csprojAssemblyReference.cache
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.Properties.Resources.resources
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.csproj.GenerateResource.cache
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.csproj.CoreCompileInputs.cache
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\bin\Debug\KHCC.exe.config
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\bin\Debug\KHCC.exe
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\bin\Debug\KHCC.pdb
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.exe
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.pdb
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.CharacterBuilder.resources
+C:\Users\zyorh\source\repos\KHCC\KHCC\KHCC\obj\Debug\KHCC.StartUp.resources
