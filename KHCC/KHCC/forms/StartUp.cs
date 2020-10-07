@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KHCC.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,17 @@ namespace KHCC
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (rbtnNewCharacter.Checked)
+            {
+                this.Hide();
+                var pw = new PickWeapon();
+                pw.cc = cc;
+                pw.ShowDialog();
+            }
+            if (rbtnLoadCharacter.Checked)
+            {
+
+            }
         }
     }
 }

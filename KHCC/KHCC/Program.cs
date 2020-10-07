@@ -18,17 +18,18 @@ namespace KHCC
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            CharacterContainer cc = new CharacterContainer();;
+            //sets up cc variable on this form
+            CharacterContainer cc = new CharacterContainer();
 
-
+            // sets up forms variables
             var su = new StartUp();
+
+            // sets up cc variable for passing across forms
             su.cc = cc;
+
+
             su.ShowDialog();
 
-
-            var cb = new CharacterBuilder();
-            cb.cc = cc;
-            cb.ShowDialog();
 
             //primary
             //    50 point to gain through leveling
@@ -38,6 +39,13 @@ namespace KHCC
             //    25 points to gain through leveling
             //    1 every 4 levels
 
+
+            // get the quizz section finished
+            // get some leveling up logic done
+            // come up with a plan for handling lux and skills
+            // ideas for talents
+
+            // setup framework for saving and loading characters
 
         }
     }

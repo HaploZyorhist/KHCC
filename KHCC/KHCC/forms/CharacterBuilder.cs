@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KHCC.forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,8 +14,8 @@ namespace KHCC
 {
     public partial class CharacterBuilder : Form
     {
-
-        public CharacterContainer cc { get; set; } 
+        public CharacterContainer cc { get; set; }
+        public StartUp su { get; set; }
 
         // initialize handlers for text boxes
         int magTotal;
@@ -46,26 +47,25 @@ namespace KHCC
         {
             InitializeComponent();
 
-            //lblTest.Text = cc.bodyBase.ToString();
+            //var ss = new SkillShop();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cmbRace.Text = "Human";
+            lblPlayer.Text = cc.playerName;
+            lblCharacter.Text = cc.characterName;
+
+            // attempt to set races
+            cmbRace.Items.Add("Human");
+            cmbRace.Items.Add("Moogle");
+            cmbRace.Items.Add("Yordle");
+
+            // set default race
+            cmbRace.SelectedIndex = 0;
+
             UpdateDisplay();
-
         }
-
-        private void txtCharacterName_TextChanged(object sender, EventArgs e)
-        {
-            cc.characterName = txtCharacterName.Text;
-        }
-
-        private void txtPlayerName_TextChanged(object sender, EventArgs e)
-        {
-            cc.playerName = txtPlayerName.Text;
-        }
-
 
         // --------------------------------------------------------------------------------------------------------------------------
         // ------------------------------------ (+) Buttons -------------------------------------------------------------------------
@@ -248,11 +248,8 @@ namespace KHCC
         private void cmbRace_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            // races get a net 5 gain to primaries and net 3 gain to secondaries
-
-            int primCorrection;
-            int secoCorrection;
-
+            // races get a net 7 gain to primaries and net 3 gain to secondaries
+            // give humans a bonus starting skill
             if (cmbRace.Text == "Human")
             {
                 cc.race = cmbRace.Text;
@@ -262,12 +259,13 @@ namespace KHCC
                 cc.powerRace = 0;
                 cc.fortitudeRace = 0;
                 cc.finesseRace = 0;
+                // bonus starting lux equal to the cost of a starting skill
             }
 
             if(cmbRace.Text == "Moogle")
             {
                 cc.race = cmbRace.Text;
-                cc.bodyRace = -5;
+                cc.bodyRace = -3;
                 cc.speedRace = 0;
                 cc.magicRace = 10;
                 cc.powerRace = 0;
@@ -275,48 +273,22 @@ namespace KHCC
                 cc.finesseRace = 5;
 
                 UpdateDisplay();
+                CheckPointOverMax();
+            }
 
-                if (bodTotal > 30)
-                {
-                    primCorrection = bodTotal - 30;
-                    cc.body = 30 - (cc.bodyRace + cc.bodyBase);
-                    primRemaining += primCorrection;
-                }
+            if(cmbRace.Text == "Yordle")
+            {
+                cc.race = cmbRace.Text;
+                cc.bodyRace = -3;
+                cc.speedRace = 5;
+                cc.magicRace = 5;
+                cc.powerRace = -2;
+                cc.fortitudeRace = 0;
+                cc.finesseRace = 5;
 
-                if (spdTotal > 30)
-                {
-                    primCorrection = spdTotal - 30;
-                    cc.speed = 30 - (cc.speedRace + cc.speedBase);
-                    primRemaining += primCorrection;
-                }
+                UpdateDisplay();
+                CheckPointOverMax();
 
-                if (magTotal > 30)
-                {
-                    primCorrection = magTotal - 30;
-                    cc.magic = 30 - (cc.magicRace + cc.magicBase);
-                    primRemaining += primCorrection;
-                }
-
-                if (powTotal > 25)
-                {
-                    secoCorrection = powTotal - 25;
-                    cc.power = 25 - (cc.powerRace + cc.powerBase);
-                    secoRemaining += secoCorrection;
-                }
-
-                if (frtTotal > 25)
-                {
-                    secoCorrection = frtTotal - 25;
-                    cc.fortitude = 25 - (cc.fortitudeRace + cc.fortitudeBase);
-                    secoRemaining += secoCorrection;
-                }
-
-                if (finTotal > 25)
-                {
-                    secoCorrection = finTotal - 25;
-                    cc.finesse = 25 - (cc.finesseRace + cc.finesseBase);
-                    secoRemaining += secoCorrection;
-                }
             }
 
             UpdateDisplay();
@@ -372,6 +344,53 @@ namespace KHCC
             lblSorcery.Text = sorcery.ToString();
 
             // End of setting text to default values
+        }
+        private void CheckPointOverMax()
+        {
+            int primCorrection;
+            int secoCorrection;
+
+            if (bodTotal > 30)
+            {
+                primCorrection = bodTotal - 30;
+                cc.body = 30 - (cc.bodyRace + cc.bodyBase);
+                primRemaining += primCorrection;
+            }
+
+            if (spdTotal > 30)
+            {
+                primCorrection = spdTotal - 30;
+                cc.speed = 30 - (cc.speedRace + cc.speedBase);
+                primRemaining += primCorrection;
+            }
+
+            if (magTotal > 30)
+            {
+                primCorrection = magTotal - 30;
+                cc.magic = 30 - (cc.magicRace + cc.magicBase);
+                primRemaining += primCorrection;
+            }
+
+            if (powTotal > 25)
+            {
+                secoCorrection = powTotal - 25;
+                cc.power = 25 - (cc.powerRace + cc.powerBase);
+                secoRemaining += secoCorrection;
+            }
+
+            if (frtTotal > 25)
+            {
+                secoCorrection = frtTotal - 25;
+                cc.fortitude = 25 - (cc.fortitudeRace + cc.fortitudeBase);
+                secoRemaining += secoCorrection;
+            }
+
+            if (finTotal > 25)
+            {
+                secoCorrection = finTotal - 25;
+                cc.finesse = 25 - (cc.finesseRace + cc.finesseBase);
+                secoRemaining += secoCorrection;
+            }
         }
     }
 }

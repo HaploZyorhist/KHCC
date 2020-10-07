@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KHCC.classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,8 @@ namespace KHCC
         public int age = 0;
 
         public string description = "";
+
+        public List<Skill> skills;
 
     }
 }

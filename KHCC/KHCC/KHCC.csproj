@@ -46,23 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CharacterContainer.cs" />
-    <Compile Include="CharacterBuilder.cs">
+    <Compile Include="classes\CharacterContainer.cs" />
+    <Compile Include="classes\Skill.cs" />
+    <Compile Include="forms\CharacterBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CharacterBuilder.Designer.cs">
+    <Compile Include="forms\CharacterBuilder.Designer.cs">
       <DependentUpon>CharacterBuilder.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartUp.cs">
+    <Compile Include="forms\SkillShop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartUp.Designer.cs">
+    <Compile Include="forms\SkillShop.Designer.cs">
+      <DependentUpon>SkillShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\PickWeapon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\PickWeapon.Designer.cs">
+      <DependentUpon>PickWeapon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\StartUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\StartUp.Designer.cs">
       <DependentUpon>StartUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CharacterBuilder.resx">
+    <EmbeddedResource Include="forms\CharacterBuilder.resx">
       <DependentUpon>CharacterBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\PickWeapon.resx">
+      <DependentUpon>PickWeapon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -73,7 +89,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="StartUp.resx">
+    <EmbeddedResource Include="forms\StartUp.resx">
       <DependentUpon>StartUp.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
